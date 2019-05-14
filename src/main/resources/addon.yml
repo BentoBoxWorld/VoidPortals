@@ -1,0 +1,12 @@
+name: VoidPortals
+main: world.bentobox.voidportals.VoidPortalsAddon
+version: ${version}${build.number}
+repository: 'BentoBoxWorld/VoidPortals'
+metrics: true
+
+authors:
+  - BONNe
+
+softdepend: AcidIsland, BSkyBlock, CaveBlock, SkyGrid, Level
+
+permissions: []
