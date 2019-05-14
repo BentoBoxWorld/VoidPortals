@@ -3,6 +3,7 @@ main: world.bentobox.voidportals.VoidPortalsAddon
 version: ${version}${build.number}
 repository: 'BentoBoxWorld/VoidPortals'
 metrics: true
+icon: ENDER_PEARL
 
 authors:
   - BONNe
