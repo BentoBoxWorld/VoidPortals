@@ -53,11 +53,12 @@ public class VoidPortalsAddon extends Addon
 			return;
 		}
 
-		List<String> hookedGameModes = new ArrayList<>();
-
 		// Register game mode in world flag.
 		this.getPlugin().getAddonsManager().getGameModeAddons().forEach(
-			VoidPortalsAddon.VOID_WORLD_TELEPORT_FLAG::addGameModeAddon);
+			gameModeAddon -> {
+				VoidPortalsAddon.VOID_WORLD_TELEPORT_FLAG.addGameModeAddon(gameModeAddon);
+				this.hooked = true;
+			});
 
 		if (this.hooked)
 		{
