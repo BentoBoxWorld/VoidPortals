@@ -66,29 +66,29 @@ public class VoidPortalsAddon extends Addon
 
 			Optional<Addon> level = this.getAddonByName("Level");
 
-			if (!level.isPresent())
-			{
-				this.logWarning("Level add-on not found so VoidPortals will not work correctly!");
-				this.levelAddon = null;
-			}
-			else
-			{
-				this.levelProvided = true;
-				this.levelAddon = (Level) level.get();
-			}
+//			if (!level.isPresent())
+//			{
+//				this.logWarning("Level add-on not found so VoidPortals will not work correctly!");
+//				this.levelAddon = null;
+//			}
+//			else
+//			{
+//				this.levelProvided = true;
+//				this.levelAddon = (Level) level.get();
+//			}
 
 			Optional<VaultHook> vault = this.getPlugin().getVault();
 
-			if (!vault.isPresent() || !vault.get().hook())
-			{
-				this.vaultHook = null;
-				this.logWarning("Economy plugin not found so money options will not work!");
-			}
-			else
-			{
-				this.economyProvided = true;
-				this.vaultHook = vault.get();
-			}
+//			if (!vault.isPresent() || !vault.get().hook())
+//			{
+//				this.vaultHook = null;
+//				this.logWarning("Economy plugin not found so money options will not work!");
+//			}
+//			else
+//			{
+//				this.economyProvided = true;
+//				this.vaultHook = vault.get();
+//			}
 
 
 			// Register the listener.
