@@ -26,11 +26,11 @@ If your language is not in the list, please contact to developers via Discord an
 
 ## Compatibility
 
-- [x] BentoBox - 1.5.0 version
-- [x] BSkyBlock - 1.5.0 version
-- [x] AcidIsland - 1.5.0 version
-- [x] SkyGrid - 1.5.0 version
-- [x] CaveBlock - 1.5.0 version
+- [x] BentoBox - 1.5.0+ version
+- [x] BSkyBlock - 1.5.0+ version
+- [x] AcidIsland - 1.5.0+ version
+- [x] SkyGrid - 1.5.0+ version
+- [x] CaveBlock - 1.5.0+ version
 
 ## Information
 
