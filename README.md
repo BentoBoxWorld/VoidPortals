@@ -13,6 +13,11 @@ Or you can try **nightly builds** where you can check and test new features that
 
 If you like this addon but something is missing or is not working as you want, you can always submit an [Issue request](https://github.com/BentoBoxWorld/VoidPortals/issues) or get a support in Discord [BentoBox ![icon](https://avatars2.githubusercontent.com/u/41555324?s=15&v=4)](https://discord.bentobox.world)
 
+## Translations
+
+As most of BentoBox projects, Challenges Addon is translatable in any language. Everyone can contribute, and translate some parts of the addon in their language via [GitLocalize](https://gitlocalize.com/repo/2975).
+If your language is not in the list, please contact to developers via Discord and it will be added there.
+
 ## How to use
 
 1. Place the addon jar in the addons folder of the BentoBox plugin
