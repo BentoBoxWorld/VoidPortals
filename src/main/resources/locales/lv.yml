@@ -1,0 +1,8 @@
+---
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&oŠī opcija ļauj pārslēgt\n&5&oiespēju pārvietoties uz\n&5&ocitu
+        dimensiju, ja \n&5&ospēlētājs iekrīt nekurienē"
+      name: Nekurienes pasaules teleportēšanās
+      hint: Iekrušana nekurienē nenovedīs pie spēlētāja nāves.
