@@ -1,0 +1,9 @@
+---
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: |-
+        &5&oこれは、プレイヤーがボイドに
+        &5&o陥った場合に、
+        &5&o異なる次元へのテレポートを
+        &5&o有効/無効にします。
