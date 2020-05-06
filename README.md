@@ -24,6 +24,8 @@ If your language is not in the list, please contact to developers via Discord an
 2. Restart the server
 3. In game you can change flags that allows to use current addon.
 
+**Note**: By default flag is **disabled**. To enable you need to open GameMode Admin Settings panel and search for "Void world teleports" _[VOID_WORLD_TELEPORT_FLAG]_ flag (Ender Prerl icon). 
+
 ## Compatibility
 
 - [x] BentoBox - 1.5.0+ version
