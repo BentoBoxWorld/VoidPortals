@@ -1,0 +1,10 @@
+---
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: |-
+        &5&oPozwala to włączyć/wyłączyć
+        &5&możliwość teleportacji do
+        &5&inny wymiar, kiedy
+        &5&gracz spada w pustkę.
+      name: Teleporty do świata przez pustke
