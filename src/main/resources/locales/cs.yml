@@ -1,0 +1,8 @@
+# Translation by: CZghost
+
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&oToto umožní zapnout/vypnout\n&5&omožnost teleportace\n&5&odo jiné dimenze,\n&5&opokud hráč padá do voidu."
+      name: "Teleporty ve void světě"
+      hint: "Padání do voidu nevyústí ve smrt."

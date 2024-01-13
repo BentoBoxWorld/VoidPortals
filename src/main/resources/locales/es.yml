@@ -1,0 +1,10 @@
+---
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: |-
+        &5 &o Esto permite habilitar / deshabilitar
+        &5&oHabilidad para teletransportarse a &5 y dimensión dimensions
+        &5&oplayer cae en vacío.
+      name: Telepuertos mundiales vacíos
+      hint: Caer en el vacío no terminará en la muerte.
