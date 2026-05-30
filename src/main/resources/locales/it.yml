@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&oQuesto permette di attivare/disattivare\n&5&ola possibilità di teletrasportarsi in\n&5&ouna dimensione diversa se\n&5&oil giocatore cade nel vuoto."
+      name: "Teletrasporto nel mondo del vuoto"
+      hint: "Cadere nel vuoto non causerà la morte."

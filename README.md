@@ -38,16 +38,8 @@ If the player is standing on an island, they are sent to that island's spawn poi
 
 - [x] BentoBox 3.14.0+
 - [x] BSkyBlock
-- [x] AcidIsland
-- [x] CaveBlock
+- [x] AOneBlock
 - [x] SkyGrid
-
----
-
-## 🌐 Translations
-
-Like most BentoBox projects, the VoidPortals Add-on is translatable into any language. Everyone can contribute and translate parts of the addon into their language via [GitLocalize](https://gitlocalize.com/repo/2975).
-If your language is not in the list, please contact the developers via Discord and it will be added.
 
 ---
 

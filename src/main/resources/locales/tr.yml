@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&oBu, oyuncu boşluğa düştüğünde\n&5&ofarklı bir boyuta ışınlanma\n&5&oözelliğini etkinleştirmeyi/devre dışı\n&5&obırakmayı sağlar."
+      name: "Boşluk dünyası ışınlanması"
+      hint: "Boşluğa düşmek ölümle sonuçlanmaz."

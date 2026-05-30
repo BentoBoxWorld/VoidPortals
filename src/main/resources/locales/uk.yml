@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&oЦе дозволяє увімкнути/вимкнути\n&5&oможливість телепортуватися\n&5&oв інший вимір, якщо\n&5&oгравець падає в порожнечу."
+      name: "Телепорт у порожній світ"
+      hint: "Падіння в порожнечу не закінчиться смертю."

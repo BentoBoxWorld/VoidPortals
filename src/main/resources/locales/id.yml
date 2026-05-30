@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&oIni memungkinkan mengaktifkan/menonaktifkan\n&5&okemampuan untuk teleportasi ke\n&5&odimensi berbeda jika\n&5&opemain jatuh ke void."
+      name: "Teleportasi dunia void"
+      hint: "Jatuh ke void tidak akan berakhir dengan kematian."

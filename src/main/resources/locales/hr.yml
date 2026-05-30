@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&oOvo omogućuje uključivanje/isključivanje\n&5&omogućnosti teleportacije u\n&5&odrugu dimenziju ako\n&5&oigrač padne u prazninu."
+      name: "Teleportacija u svijetu praznine"
+      hint: "Pad u prazninu neće završiti smrću."

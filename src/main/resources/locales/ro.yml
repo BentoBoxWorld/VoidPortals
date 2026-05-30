@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&oAceasta permite activarea/dezactivarea\n&5&oposibilității de teleportare într-o\n&5&odimensiune diferită dacă\n&5&ojucătorul cade în vid."
+      name: "Teleportare în lumea vidului"
+      hint: "Căderea în vid nu se va termina cu moartea."

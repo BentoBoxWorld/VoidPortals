@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&o這允許啟用/停用\n&5&o當玩家墜入虛空時\n&5&o傳送到不同維度的\n&5&o功能。"
+      name: "虛空世界傳送"
+      hint: "墜入虛空不會導致死亡。"

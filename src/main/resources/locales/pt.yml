@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "&5&oIsto permite ativar/desativar\n&5&oa capacidade de teletransportar para\n&5&ouma dimensão diferente se\n&5&oo jogador cair no vazio."
+      name: "Teletransporte do mundo do vazio"
+      hint: "Cair no vazio não terminará em morte."
