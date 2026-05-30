@@ -1,5 +1,6 @@
 package world.bentobox.voidportals.listeners;
 
+import java.util.Optional;
 
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -10,135 +11,98 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
 
-
-import world.bentobox.bentobox.util.Util;
+import world.bentobox.bentobox.api.addons.GameModeAddon;
 import world.bentobox.bentobox.util.teleport.SafeSpotTeleport;
 import world.bentobox.voidportals.VoidPortalsAddon;
 
-
 /**
- * Main Void Listener. This class contains listener that detects if player must be
- * teleported via VoidPortal.
+ * Detects when a player falls into the void in a game mode world and teleports
+ * them to the next dimension instead of letting them die. The cycle is
+ * Overworld &rarr; Nether &rarr; The End &rarr; Overworld.
  */
-public class VoidListener implements Listener
-{
-	/**
-	 * Constructor VoidListener creates a new VoidListener instance.
-	 *
-	 * @param addon of type VoidPortalsAddon
-	 */
-	public VoidListener(VoidPortalsAddon addon)
-	{
-		this.addon = addon;
-	}
+public class VoidListener implements Listener {
 
+    private final VoidPortalsAddon addon;
 
+    public VoidListener(VoidPortalsAddon addon) {
+        this.addon = addon;
+    }
 
-	/**
-	 * Method onPlayerMove disables movement if player is falling in void and alternative
-	 * teleport flag is enabled.
-	 * It will work only when player reach negative Y coordinates.
-	 *
-	 * @param event of type PlayerMoveEvent
-	 */
-	@EventHandler(priority = EventPriority.LOWEST)
-	public void onPlayerLeftWorld(PlayerMoveEvent event)
-	{
-		Player player = event.getPlayer();
-		final double nextY = event.getTo() == null ? 1 : event.getTo().getY();
+    /**
+     * Teleports a player falling into the void to the next dimension. Only fires once
+     * the player drops to or below y = 0 in a world where the flag is enabled.
+     *
+     * @param event the player move event
+     */
+    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
+    public void onPlayerFallIntoVoid(PlayerMoveEvent event) {
+        Player player = event.getPlayer();
+        Location to = event.getTo();
+        Location from = event.getFrom();
 
-		if (event.isCancelled() ||
-			// ignore dead and spectators
-			player.isDead() ||
-			player.getGameMode().equals(GameMode.SPECTATOR) ||
-			// If above 0, then exit
-			nextY > 0 ||
-			// Next check will allow to go down, but never up.
-			event.getFrom().getY() <= nextY &&
-				event.getFrom().getBlockX() == event.getTo().getBlockX() &&
-				event.getFrom().getBlockZ() == event.getTo().getBlockZ() ||
-			this.addon.getPlayers().isInTeleport(player.getUniqueId()) ||
-			// If GameMode addon does not exist, then exit.
-			!this.addon.getPlugin().getIWM().getAddon(player.getWorld()).isPresent() ||
-			// If world flag is not enabled for current world then exit.
-			!VoidPortalsAddon.VOID_WORLD_TELEPORT_FLAG.isSetForWorld(player.getWorld()))
-		{
-			return;
-		}
+        // Only act once the player has dropped to or below the world floor.
+        if (to == null || to.getY() > 0) {
+            return;
+        }
 
-		// Use custom teleport to different world
-		if (nextY <= 0 && VoidPortalsAddon.VOID_WORLD_TELEPORT_FLAG.isSetForWorld(player.getWorld()))
-		{
-			switch (player.getWorld().getEnvironment())
-			{
-				case NORMAL:
-				{
-					// From normal world users will get to nether.
+        // Ignore the dead and spectators.
+        if (player.isDead() || player.getGameMode() == GameMode.SPECTATOR) {
+            return;
+        }
 
-					Location to = this.addon.getIslands().getIslandAt(event.getFrom()).
-						map(i -> i.getSpawnPoint(World.Environment.NETHER)).
-						orElse(event.getFrom().toVector().toLocation(this.addon.getPlugin().getIWM().getAddon(player.getWorld()).get().getNetherWorld()));
+        // Allow falling, but ignore movement that does not descend within the same column.
+        if (from.getY() <= to.getY() && from.getBlockX() == to.getBlockX() && from.getBlockZ() == to.getBlockZ()) {
+            return;
+        }
 
-					event.setCancelled(true);
+        // Skip players already mid-teleport.
+        if (addon.getPlayers().isInTeleport(player.getUniqueId())) {
+            return;
+        }
 
-					new SafeSpotTeleport.Builder(this.addon.getPlugin()).
-						entity(event.getPlayer()).
-						location(to).
-						portal().
-						build();
+        // Only act in a game mode world where the flag is enabled.
+        World world = player.getWorld();
+        Optional<GameModeAddon> gameMode = addon.getPlugin().getIWM().getAddon(world);
+        if (gameMode.isEmpty() || !VoidPortalsAddon.VOID_WORLD_TELEPORT_FLAG.isSetForWorld(world)) {
+            return;
+        }
 
-					break;
-				}
-				case NETHER:
-				{
-					// From nether world users will get to the end.
+        // Resolve the destination dimension and its world.
+        World.Environment target;
+        World targetWorld;
+        switch (world.getEnvironment()) {
+            case NORMAL -> {
+                target = World.Environment.NETHER;
+                targetWorld = gameMode.get().getNetherWorld();
+            }
+            case NETHER -> {
+                target = World.Environment.THE_END;
+                targetWorld = gameMode.get().getEndWorld();
+            }
+            case THE_END -> {
+                target = World.Environment.NORMAL;
+                targetWorld = gameMode.get().getOverWorld();
+            }
+            default -> {
+                return;
+            }
+        }
 
-					Location to = this.addon.getIslands().getIslandAt(event.getFrom()).
-						map(i -> i.getSpawnPoint(World.Environment.THE_END)).
-						orElse(event.getFrom().toVector().toLocation(this.addon.getPlugin().getIWM().getAddon(player.getWorld()).get().getEndWorld()));
+        if (targetWorld == null) {
+            return;
+        }
 
-					event.setCancelled(true);
+        // Teleport to the island's spawn point in the target dimension, or to the same
+        // x/z coordinates there if the player is not on an island.
+        Location destination = addon.getIslands().getIslandAt(from)
+                .map(island -> island.getSpawnPoint(target))
+                .orElse(from.toVector().toLocation(targetWorld));
 
-					new SafeSpotTeleport.Builder(this.addon.getPlugin()).
-						entity(event.getPlayer()).
-						location(to).
-						portal().
-						build();
-
-					break;
-				}
-				case THE_END:
-				{
-					// From the end users will get to over world.
-
-					Location to = this.addon.getIslands().getIslandAt(event.getFrom()).
-						map(i -> i.getSpawnPoint(World.Environment.NORMAL)).
-						orElse(event.getFrom().toVector().toLocation(this.addon.getPlugin().getIWM().getAddon(player.getWorld()).get().getOverWorld()));
-
-					event.setCancelled(true);
-
-					new SafeSpotTeleport.Builder(this.addon.getPlugin()).
-						entity(event.getPlayer()).
-						location(to).
-						portal().
-						build();
-					break;
-				}
-				default:
-					break;
-			}
-		}
-	}
-
-
-
-	// ---------------------------------------------------------------------
-	// Section: Variables
-	// ---------------------------------------------------------------------
-
-
-	/**
-	 * Main addon class.
-	 */
-	private VoidPortalsAddon addon;
+        event.setCancelled(true);
+        new SafeSpotTeleport.Builder(addon.getPlugin())
+                .entity(player)
+                .location(destination)
+                .portal()
+                .build();
+    }
 }

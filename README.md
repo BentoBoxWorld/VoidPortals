@@ -1,39 +1,69 @@
-# VoidPortals Addon
+# 🌀 VoidPortals Add-on for BentoBox
 [![Discord](https://img.shields.io/discord/272499714048524288.svg?logo=discord)](https://discord.bentobox.world)
 [![Build Status](https://ci.codemc.org/buildStatus/icon?job=BentoBoxWorld/VoidPortals)](https://ci.codemc.org/job/BentoBoxWorld/job/VoidPortals/)
 
-Add-on for BentoBox to provide ability to teleport to different world via falling in the Void for any BentoBox GameMode. 
+## 🔍 What is VoidPortals?
 
-## Where to find
+**VoidPortals** is a BentoBox add-on that turns falling into the void into a way to travel between dimensions instead of a death sentence. When a player drops out of the bottom of the world, they are safely teleported to the matching location in the next dimension:
 
-Currently VoidPortals Addon is in **Alpha stage**, so it may or may not contain bugs... a lot of bugs. Also it means, that some features are not working or implemented. 
-You can download it from [Release tab](https://github.com/BentoBoxWorld/VoidPortals/releases)
+**Overworld → Nether → The End → Overworld**
 
-Or you can try **nightly builds** where you can check and test new features that will be implemented in next release from [Jenkins Server](https://ci.codemc.org/job/BentoBoxWorld/job/VoidPortals/lastStableBuild/).
+It works with any BentoBox game mode (BSkyBlock, AcidIsland, CaveBlock, SkyGrid) and is controlled by a single per-world flag, so server admins decide exactly which worlds it applies to.
 
-If you like this addon but something is missing or is not working as you want, you can always submit an [Issue request](https://github.com/BentoBoxWorld/VoidPortals/issues) or get a support in Discord [BentoBox ![icon](https://avatars2.githubusercontent.com/u/41555324?s=15&v=4)](https://discord.bentobox.world)
+---
 
-## Translations
+## 🚀 Getting Started
 
-As most of BentoBox projects, Challenges Addon is translatable in any language. Everyone can contribute, and translate some parts of the addon in their language via [GitLocalize](https://gitlocalize.com/repo/2975).
-If your language is not in the list, please contact to developers via Discord and it will be added there.
+1. Place the **VoidPortals** `.jar` into your BentoBox `addons` folder.
+2. Restart your server.
+3. The flag is **disabled by default** — enable it per world to turn the feature on (see below).
 
-## How to use
+---
 
-1. Place the addon jar in the addons folder of the BentoBox plugin
-2. Restart the server
-3. In game you can change flags that allows to use current addon.
+## ⚙️ How it works
 
-**Note**: By default flag is **disabled**. To enable you need to open GameMode Admin Settings panel and search for "Void world teleports" _[VOID_WORLD_TELEPORT_FLAG]_ flag (Ender Prerl icon). 
+VoidPortals adds a single world setting flag, **Void world teleports** (`VOID_WORLD_TELEPORT_FLAG`, Ender Pearl icon).
 
-## Compatibility
+To enable it, open the **Game Mode Admin Settings** panel and toggle the *Void world teleports* flag for the world you want. Once enabled, any player who falls into the void in that world is teleported with a portal effect to the next dimension:
 
-- [x] BentoBox - 1.5.0+ version
-- [x] BSkyBlock - 1.5.0+ version
-- [x] AcidIsland - 1.5.0+ version
-- [x] SkyGrid - 1.5.0+ version
-- [x] CaveBlock - 1.5.0+ version
+- In the **Overworld**, they arrive in the **Nether**.
+- In the **Nether**, they arrive in **The End**.
+- In **The End**, they arrive back in the **Overworld**.
 
-## Information
+If the player is standing on an island, they are sent to that island's spawn point in the destination dimension; otherwise they arrive at the same X/Z coordinates in the destination world. Dead players, spectators, and players already being teleported are ignored.
 
-More information can be found in [Wiki Pages](https://github.com/BentoBoxWorld/VoidPortals/wiki).
+---
+
+## 🌍 Compatibility
+
+- [x] BentoBox 3.14.0+
+- [x] BSkyBlock
+- [x] AcidIsland
+- [x] CaveBlock
+- [x] SkyGrid
+
+---
+
+## 🌐 Translations
+
+Like most BentoBox projects, the VoidPortals Add-on is translatable into any language. Everyone can contribute and translate parts of the addon into their language via [GitLocalize](https://gitlocalize.com/repo/2975).
+If your language is not in the list, please contact the developers via Discord and it will be added.
+
+---
+
+## 🔨 Building
+
+VoidPortals builds with Maven and requires **Java 21**. It targets Paper 1.21.11 and BentoBox 3.14.0.
+
+```bash
+mvn clean package        # build the shaded jar into target/
+mvn test                 # run the JUnit 5 / MockBukkit test suite
+```
+
+Nightly builds are available from the [Jenkins Server](https://ci.codemc.org/job/BentoBoxWorld/job/VoidPortals/lastStableBuild/), and tagged releases from the [Releases tab](https://github.com/BentoBoxWorld/VoidPortals/releases).
+
+---
+
+## 🐛 Bugs and Feature Requests
+
+Please submit issues at [GitHub Issues](https://github.com/BentoBoxWorld/VoidPortals/issues) or ask in the BentoBox [Discord](https://discord.bentobox.world). More information can be found in the [Wiki](https://github.com/BentoBoxWorld/VoidPortals/wiki).

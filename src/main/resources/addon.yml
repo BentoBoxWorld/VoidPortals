@@ -8,6 +8,6 @@ icon: ENDER_PEARL
 authors:
   - BONNe
 
-softdepend: AcidIsland, BSkyBlock, CaveBlock, SkyGrid, Level
+softdepend: AcidIsland, BSkyBlock, CaveBlock, SkyGrid
 
 permissions: []
