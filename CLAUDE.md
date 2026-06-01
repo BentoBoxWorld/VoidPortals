@@ -14,7 +14,7 @@ The addon is small — the production code is three classes:
 ## Build & test
 
 ```bash
-mvn clean package        # build the shaded jar into target/
+mvn clean package        # build the jar into target/
 mvn test                 # run the JUnit 5 + MockBukkit suite
 mvn test -Dtest=VoidListenerTest          # run a single test class
 mvn test -Dtest=VoidListenerTest#testOverworldFallTeleportsToNether   # single method
@@ -22,7 +22,7 @@ mvn test -Dtest=VoidListenerTest#testOverworldFallTeleportsToNether   # single m
 
 - **Java 21**, Paper `1.21.11`, BentoBox `3.14.0-SNAPSHOT` (see `pom.xml` properties).
 - Dependencies (BentoBox, Paper) are `provided` and resolved from the **PaperMC**, **CodeMC/BentoBoxWorld**, and **JitPack** repos, not Maven Central. The first build needs network access.
-- The build produces `target/VoidPortals-<version>.jar`; copy it into a BentoBox server's `addons/` folder to test in-game. Drop the `original-*.jar` (pre-shade) — use the shaded one.
+- The build produces `target/VoidPortals-<version>.jar`; copy it into a BentoBox server's `addons/` folder to test in-game. (All dependencies are `provided`/`test` scope, so there is nothing to shade — the jar is the plain addon classes plus resources.)
 - Version is driven by the `build.version` property and Jenkins env vars (`BUILD_NUMBER`, `GIT_BRANCH`) via the `ci`/`master` profiles — `addon.yml` and `plugin.yml` use filtered `${...}` placeholders, so don't hardcode versions there.
 
 ## How the addon works (architecture)
