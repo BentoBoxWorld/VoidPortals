@@ -2,6 +2,6 @@
 protection:
   flags:
     VOID_WORLD_TELEPORT_FLAG:
-      description: "&5&oBu, oyuncu boşluğa düştüğünde\n&5&ofarklı bir boyuta ışınlanma\n&5&oözelliğini etkinleştirmeyi/devre dışı\n&5&obırakmayı sağlar."
+      description: "<dark_purple><italic>Bu, oyuncu boşluğa düştüğünde</italic></dark_purple>\n<dark_purple><italic>farklı bir boyuta ışınlanma</italic></dark_purple>\n<dark_purple><italic>özelliğini etkinleştirmeyi/devre dışı</italic></dark_purple>\n<dark_purple><italic>bırakmayı sağlar.</italic></dark_purple>"
       name: "Boşluk dünyası ışınlanması"
       hint: "Boşluğa düşmek ölümle sonuçlanmaz."

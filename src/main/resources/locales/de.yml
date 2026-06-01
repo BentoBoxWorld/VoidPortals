@@ -1,9 +1,6 @@
----
 protection:
   flags:
     VOID_WORLD_TELEPORT_FLAG:
-      description: "&5&oDas erlaubt es, die Fähigkeit, &5&osich in eine andere Dimension
-        zu &5&oteleportieren, zu aktivieren/deaktivieren, wenn &5&oSpieler in die Leere
-        fallen."
-      name: Leere Welt teleportiert
-      hint: In die Leere fallen wird nicht mit dem Tod enden.
+      description: "<dark_purple><italic>Das erlaubt es, die Fähigkeit, sich in</italic></dark_purple>\n<dark_purple><italic>eine andere Dimension zu teleportieren,</italic></dark_purple>\n<dark_purple><italic>zu aktivieren/deaktivieren, wenn</italic></dark_purple>\n<dark_purple><italic>Spieler in die Leere fallen.</italic></dark_purple>"
+      name: "Leere-Welt-Teleportation"
+      hint: "In die Leere fallen wird nicht mit dem Tod enden."

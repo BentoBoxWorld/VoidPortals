@@ -2,6 +2,6 @@
 protection:
   flags:
     VOID_WORLD_TELEPORT_FLAG:
-      description: "&5&oOvo omogućuje uključivanje/isključivanje\n&5&omogućnosti teleportacije u\n&5&odrugu dimenziju ako\n&5&oigrač padne u prazninu."
+      description: "<dark_purple><italic>Ovo omogućuje uključivanje/isključivanje</italic></dark_purple>\n<dark_purple><italic>mogućnosti teleportacije u</italic></dark_purple>\n<dark_purple><italic>drugu dimenziju ako</italic></dark_purple>\n<dark_purple><italic>igrač padne u prazninu.</italic></dark_purple>"
       name: "Teleportacija u svijetu praznine"
       hint: "Pad u prazninu neće završiti smrću."

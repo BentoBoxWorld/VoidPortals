@@ -2,6 +2,6 @@
 protection:
   flags:
     VOID_WORLD_TELEPORT_FLAG:
-      description: "&5&oEz engedélyezi/letiltja a\n&5&omás dimenzióba való\n&5&oteleportálás lehetőségét, ha\n&5&oa játékos az ürességbe esik."
+      description: "<dark_purple><italic>Ez engedélyezi/letiltja a</italic></dark_purple>\n<dark_purple><italic>más dimenzióba való</italic></dark_purple>\n<dark_purple><italic>teleportálás lehetőségét, ha</italic></dark_purple>\n<dark_purple><italic>a játékos az ürességbe esik.</italic></dark_purple>"
       name: "Üres világ teleportálás"
       hint: "Az ürességbe esés nem jár halállal."

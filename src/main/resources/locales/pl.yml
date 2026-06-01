@@ -1,11 +1,6 @@
----
 protection:
   flags:
     VOID_WORLD_TELEPORT_FLAG:
-      description: |-
-        &5&oPozwala to włączyć/wyłączyć
-        &5&omożliwość teleportacji do
-        &5&oinnego wymiaru, kiedy
-        &5&ogracz spada w pustkę.
-      name: Teleporty do świata przez pustke
-      hint: Upadek w pustkę nie skończy się śmiercią.
+      description: "<dark_purple><italic>Pozwala to włączyć/wyłączyć</italic></dark_purple>\n<dark_purple><italic>możliwość teleportacji do</italic></dark_purple>\n<dark_purple><italic>innego wymiaru, kiedy</italic></dark_purple>\n<dark_purple><italic>gracz spada w pustkę.</italic></dark_purple>"
+      name: "Teleporty do świata przez pustkę"
+      hint: "Upadek w pustkę nie skończy się śmiercią."

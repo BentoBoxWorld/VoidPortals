@@ -2,6 +2,6 @@
 protection:
   flags:
     VOID_WORLD_TELEPORT_FLAG:
-      description: "&5&oQuesto permette di attivare/disattivare\n&5&ola possibilità di teletrasportarsi in\n&5&ouna dimensione diversa se\n&5&oil giocatore cade nel vuoto."
+      description: "<dark_purple><italic>Questo permette di attivare/disattivare</italic></dark_purple>\n<dark_purple><italic>la possibilità di teletrasportarsi in</italic></dark_purple>\n<dark_purple><italic>una dimensione diversa se</italic></dark_purple>\n<dark_purple><italic>il giocatore cade nel vuoto.</italic></dark_purple>"
       name: "Teletrasporto nel mondo del vuoto"
       hint: "Cadere nel vuoto non causerà la morte."

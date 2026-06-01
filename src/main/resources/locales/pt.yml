@@ -2,6 +2,6 @@
 protection:
   flags:
     VOID_WORLD_TELEPORT_FLAG:
-      description: "&5&oIsto permite ativar/desativar\n&5&oa capacidade de teletransportar para\n&5&ouma dimensão diferente se\n&5&oo jogador cair no vazio."
+      description: "<dark_purple><italic>Isto permite ativar/desativar</italic></dark_purple>\n<dark_purple><italic>a capacidade de teletransportar para</italic></dark_purple>\n<dark_purple><italic>uma dimensão diferente se</italic></dark_purple>\n<dark_purple><italic>o jogador cair no vazio.</italic></dark_purple>"
       name: "Teletransporte do mundo do vazio"
       hint: "Cair no vazio não terminará em morte."
