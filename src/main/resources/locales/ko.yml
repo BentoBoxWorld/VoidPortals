@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "<dark_purple><italic>플레이어가 공허에 빠졌을 때</italic></dark_purple>\n<dark_purple><italic>다른 차원으로 순간이동하는</italic></dark_purple>\n<dark_purple><italic>기능을 활성화/비활성화</italic></dark_purple>\n<dark_purple><italic>할 수 있도록 합니다.</italic></dark_purple>"
+      name: "공허 세계 순간이동"
+      hint: "공허에 빠져도 죽지 않습니다."

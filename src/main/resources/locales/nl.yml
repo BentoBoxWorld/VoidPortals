@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "<dark_purple><italic>Hiermee kun je de mogelijkheid om naar</italic></dark_purple>\n<dark_purple><italic>een andere dimensie te teleporteren</italic></dark_purple>\n<dark_purple><italic>in-/uitschakelen wanneer een</italic></dark_purple>\n<dark_purple><italic>speler in de leegte valt.</italic></dark_purple>"
+      name: "Leegte wereld teleportatie"
+      hint: "In de leegte vallen eindigt niet in de dood."

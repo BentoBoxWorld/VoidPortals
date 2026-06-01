@@ -1,0 +1,6 @@
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "<dark_purple><italic>Cela permet d'activer / désactiver</italic></dark_purple>\n<dark_purple><italic>la téléportation vers les autres</italic></dark_purple>\n<dark_purple><italic>dimensions si le joueur</italic></dark_purple>\n<dark_purple><italic>tombe dans le vide.</italic></dark_purple>"
+      name: "Téléportation dans les autres dimensions"
+      hint: "Tomber dans le vide ne tue pas."

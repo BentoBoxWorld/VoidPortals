@@ -1,0 +1,6 @@
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "<dark_purple><italic>Esto permite habilitar/deshabilitar</italic></dark_purple>\n<dark_purple><italic>la capacidad de teletransportarse a</italic></dark_purple>\n<dark_purple><italic>una dimensión diferente si</italic></dark_purple>\n<dark_purple><italic>el jugador cae al vacío.</italic></dark_purple>"
+      name: "Teletransporte del mundo del vacío"
+      hint: "Caer en el vacío no terminará en la muerte."

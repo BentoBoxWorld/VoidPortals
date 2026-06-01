@@ -1,6 +1,6 @@
 protection:
   flags:
     VOID_WORLD_TELEPORT_FLAG:
-      description: "&5&oThis allows to enable/disable\n&5&oability to teleport to\n&5&odiferent dimension if\n&5&oplayer falls in void."
+      description: "<dark_purple><italic>This allows to enable/disable</italic></dark_purple>\n<dark_purple><italic>ability to teleport to</italic></dark_purple>\n<dark_purple><italic>different dimension if</italic></dark_purple>\n<dark_purple><italic>player falls in void.</italic></dark_purple>"
       name: "Void world teleports"
       hint: "Falling in void will not end in death."

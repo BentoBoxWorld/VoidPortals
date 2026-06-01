@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "<dark_purple><italic>Це дозволяє увімкнути/вимкнути</italic></dark_purple>\n<dark_purple><italic>можливість телепортуватися</italic></dark_purple>\n<dark_purple><italic>в інший вимір, якщо</italic></dark_purple>\n<dark_purple><italic>гравець падає в порожнечу.</italic></dark_purple>"
+      name: "Телепорт у порожній світ"
+      hint: "Падіння в порожнечу не закінчиться смертю."

@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "<dark_purple><italic>Điều này cho phép bật/tắt</italic></dark_purple>\n<dark_purple><italic>khả năng dịch chuyển đến</italic></dark_purple>\n<dark_purple><italic>một chiều không gian khác nếu</italic></dark_purple>\n<dark_purple><italic>người chơi rơi vào hư không.</italic></dark_purple>"
+      name: "Dịch chuyển thế giới hư không"
+      hint: "Rơi vào hư không sẽ không dẫn đến cái chết."

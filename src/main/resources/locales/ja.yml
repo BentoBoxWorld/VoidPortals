@@ -1,0 +1,6 @@
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "<dark_purple><italic>これは、プレイヤーがボイドに</italic></dark_purple>\n<dark_purple><italic>陥った場合に、</italic></dark_purple>\n<dark_purple><italic>異なる次元へのテレポートを</italic></dark_purple>\n<dark_purple><italic>有効/無効にします。</italic></dark_purple>"
+      name: "ボイドワールドテレポート"
+      hint: "虚無に陥っても死には至らない。"

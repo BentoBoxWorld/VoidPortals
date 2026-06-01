@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "<dark_purple><italic>Ini memungkinkan mengaktifkan/menonaktifkan</italic></dark_purple>\n<dark_purple><italic>kemampuan untuk teleportasi ke</italic></dark_purple>\n<dark_purple><italic>dimensi berbeda jika</italic></dark_purple>\n<dark_purple><italic>pemain jatuh ke void.</italic></dark_purple>"
+      name: "Teleportasi dunia void"
+      hint: "Jatuh ke void tidak akan berakhir dengan kematian."

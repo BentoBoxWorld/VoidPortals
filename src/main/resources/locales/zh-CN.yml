@@ -1,0 +1,7 @@
+# Translation: machine-generated, pending human review
+protection:
+  flags:
+    VOID_WORLD_TELEPORT_FLAG:
+      description: "<dark_purple><italic>这允许启用/禁用</italic></dark_purple>\n<dark_purple><italic>当玩家坠入虚空时</italic></dark_purple>\n<dark_purple><italic>传送到不同维度的</italic></dark_purple>\n<dark_purple><italic>功能。</italic></dark_purple>"
+      name: "虚空世界传送"
+      hint: "坠入虚空不会导致死亡。"
