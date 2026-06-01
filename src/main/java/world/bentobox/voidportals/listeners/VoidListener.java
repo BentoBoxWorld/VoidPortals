@@ -10,6 +10,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.util.Vector;
 
 import world.bentobox.bentobox.api.addons.GameModeAddon;
 import world.bentobox.bentobox.util.teleport.SafeSpotTeleport;
@@ -104,6 +105,12 @@ public class VoidListener implements Listener {
                 .entity(player)
                 .location(destination)
                 .portal()
+                // Cancel the void-fall momentum once the player arrives, otherwise the
+                // downward velocity carries over and slams them to their death.
+                .thenRun(() -> {
+                    player.setVelocity(new Vector(0, 0, 0));
+                    player.setFallDistance(0);
+                })
                 .build();
     }
 }
