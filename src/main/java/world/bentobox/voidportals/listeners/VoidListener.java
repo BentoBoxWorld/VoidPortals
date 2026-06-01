@@ -51,7 +51,7 @@ public class VoidListener implements Listener {
         }
 
         // Allow falling, but ignore movement that does not descend within the same column.
-        if (from.getY() <= to.getY() && from.getBlockX() == to.getBlockX() && from.getBlockZ() == to.getBlockZ()) {
+        if (from.getY() <= to.getY() || from.getBlockX() != to.getBlockX() || from.getBlockZ() != to.getBlockZ()) {
             return;
         }
 
