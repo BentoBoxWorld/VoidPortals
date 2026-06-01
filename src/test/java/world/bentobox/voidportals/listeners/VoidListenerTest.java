@@ -100,6 +100,17 @@ class VoidListenerTest extends CommonTestSetup {
         return l;
     }
 
+    /** A location mock at the given height and block column. */
+    private Location loc(double y, int x, int z) {
+        Location l = mock(Location.class);
+        when(l.getY()).thenReturn(y);
+        when(l.getBlockX()).thenReturn(x);
+        when(l.getBlockZ()).thenReturn(z);
+        when(l.getWorld()).thenReturn(world);
+        when(l.toVector()).thenReturn(new Vector(x, y, z));
+        return l;
+    }
+
     /** A move event descending from y=64 to y=-5 in the same column (a void fall). */
     private PlayerMoveEvent descendingIntoVoid() {
         return new PlayerMoveEvent(mockPlayer, loc(64), loc(-5));
@@ -138,6 +149,19 @@ class VoidListenerTest extends CommonTestSetup {
 
         assertTrue(event.isCancelled());
         verify(gameMode).getOverWorld();
+    }
+
+    @Test
+    void testDiagonalFallStillTeleports() {
+        // A player falling with horizontal momentum changes block column between events.
+        // Any actual descent must still trigger the teleport, not just straight-down falls.
+        when(world.getEnvironment()).thenReturn(World.Environment.NORMAL);
+        PlayerMoveEvent event = new PlayerMoveEvent(mockPlayer, loc(64, 0, 0), loc(-5, 5, 5));
+
+        listener.onPlayerFallIntoVoid(event);
+
+        assertTrue(event.isCancelled());
+        verify(gameMode).getNetherWorld();
     }
 
     @Test

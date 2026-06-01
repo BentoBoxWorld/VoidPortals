@@ -50,8 +50,9 @@ public class VoidListener implements Listener {
             return;
         }
 
-        // Allow falling, but ignore movement that does not descend within the same column.
-        if (from.getY() <= to.getY() || from.getBlockX() != to.getBlockX() || from.getBlockZ() != to.getBlockZ()) {
+        // Ignore non-descending movement within the same column (e.g. standing still or
+        // jumping in place at the void floor); any actual descent still triggers a teleport.
+        if (from.getY() <= to.getY() && from.getBlockX() == to.getBlockX() && from.getBlockZ() == to.getBlockZ()) {
             return;
         }
 
